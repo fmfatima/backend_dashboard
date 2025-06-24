@@ -4,7 +4,8 @@ const express = require("express");
 const { 
     registerUser, 
     loginUser,
-    currentUser
+    currentUser,
+    forgetPassword
  } = require("../controllers/userController");
 
 const router = express.Router();
@@ -15,5 +16,6 @@ router.post("/login",loginUser);
  
 router.get("/current", validateToken, currentUser);
 
+router.post("/forgetPassword", forgetPassword)
 
 module.exports = router;
